@@ -8,10 +8,10 @@
 
 namespace FeedlyClient\Infrastructure;
 
-use FeedlyClient\Application\Client as ClientInterface;
+use FeedlyClient\Application\FeedlyClient as ClientInterface;
 use GuzzleHttp\Client;
 
-class HttpClient implements ClientInterface
+class HttpFeedlyClient implements ClientInterface
 {
     /** @var  Client */
     private $httpClient;
@@ -30,7 +30,7 @@ class HttpClient implements ClientInterface
 
     public function getItems($token, $profileId)
     {
-        $uri = $this->baseUrl . "/v3/mixes/contents?streamId=user%2F{$profileId}%2Fcategory%2Fglobal.all";
+        $uri = $this->baseUrl . "/v3/streams/contents?streamId=user%2F{$profileId}%2Fcategory%2Fglobal.all&count=50";
         return \GuzzleHttp\json_decode($this->httpClient->get($uri, [
             "headers" => [
                 "Authorization" => "OAuth {$token}"

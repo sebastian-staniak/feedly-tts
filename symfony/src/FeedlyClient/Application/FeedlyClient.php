@@ -2,7 +2,7 @@
 
 namespace FeedlyClient\Application;
 
-interface Client
+interface FeedlyClient
 {
     /**
      * @param string $token
