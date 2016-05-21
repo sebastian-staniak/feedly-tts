@@ -20,11 +20,12 @@ class DefaultController extends Controller
     {
         $token = $this->container->getParameter('feedly.token');
         $feedlyProfileId = $this->container->getParameter('feedly.profile_id');
+
         $client = new FilesystemFeedlyClient();
         $aiClient = new MockedMachineLearningClient();
         $sanitizer = new ItemsSanitizer();
 
-        $items = $client->getItems($token, $feedlyProfileId)->items;
+        $items = $client->getItems($token, $feedlyProfileId, 200);
         $items = $sanitizer->sanitize($items);
         $items = $aiClient->rankFeeds($items);
 

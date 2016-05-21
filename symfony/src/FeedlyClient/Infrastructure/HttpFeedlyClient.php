@@ -28,14 +28,14 @@ class HttpFeedlyClient implements ClientInterface
     }
 
 
-    public function getItems($token, $profileId)
+    public function getItems($token, $profileId, $amount = 200)
     {
-        $uri = $this->baseUrl . "/v3/streams/contents?streamId=user%2F{$profileId}%2Fcategory%2Fglobal.all&count=50";
+        $uri = $this->baseUrl . "/v3/streams/contents?streamId=user%2F{$profileId}%2Fcategory%2Fglobal.all&count={$amount}";
         return \GuzzleHttp\json_decode($this->httpClient->get($uri, [
             "headers" => [
                 "Authorization" => "OAuth {$token}"
             ]
-        ])->getBody());
+        ])->getBody())->items;
     }
 
     public function getProfile($token)
