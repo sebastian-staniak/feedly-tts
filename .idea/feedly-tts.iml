@@ -9,10 +9,12 @@
         <CLASSES>
           <root url="phar://$MODULE_DIR$/vendor/firebase/php-jwt/composer.phar/" />
           <root url="phar://$MODULE_DIR$/app/composer.phar/" />
+          <root url="phar://$MODULE_DIR$/symfony/composer.phar/" />
         </CLASSES>
         <SOURCES>
           <root url="phar://$MODULE_DIR$/vendor/firebase/php-jwt/composer.phar/" />
           <root url="phar://$MODULE_DIR$/app/composer.phar/" />
+          <root url="phar://$MODULE_DIR$/symfony/composer.phar/" />
         </SOURCES>
       </library>
     </orderEntry>
