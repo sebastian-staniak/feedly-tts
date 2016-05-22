@@ -63,4 +63,20 @@ class HttpFeedlyClient implements ClientInterface
             "json" => $body
         ]);
     }
+
+    public function markAsRead($token, array $itemIds)
+    {
+        $uri = $this->baseUrl . "/v3/markers";
+        $body = [];
+        $body["type"] = "entries";
+        $body["entryIds"] = $itemIds;
+        $body["action"] = "markAsRead";
+        $this->httpClient->post($uri, [
+            "headers" => [
+                "Authorization" => "OAuth {$token}",
+                "Content-Type" => "application/json"
+            ],
+            "json" => $body
+        ]);
+    }
 }

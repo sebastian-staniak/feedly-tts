@@ -49,4 +49,16 @@ class DefaultController extends Controller
         return new JsonResponse("", 204);
     }
 
+    /**
+     * @Route("/markAsRead", name="")
+     */
+    public function markAsRead(Request $request)
+    {
+        $request = json_decode($request->getContent());
+        $token = $this->container->getParameter('feedly.token');
+        $client = new HttpFeedlyClient();
+        $client->markAsRead($token, $request->itemIds);
+
+        return new JsonResponse("", 204);
+    }
 }
