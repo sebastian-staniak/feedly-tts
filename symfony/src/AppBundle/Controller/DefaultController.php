@@ -8,6 +8,7 @@ use FeedlyClient\Application\ItemsSanitizer;
 use FeedlyClient\Infrastructure\FilesystemFeedlyClient;
 use FeedlyClient\Infrastructure\HttpFeedlyClient;
 use FeedlyClient\Infrastructure\MockedMachineLearningClient;
+use FeedlyClient\Infrastructure\RestMachineLearningClient;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -39,11 +40,10 @@ class DefaultController extends Controller
      */
     public function saveForLater(Request $request)
     {
-        $itemIds = \GuzzleHttp\json_decode($request->request->get("itemIds"));
+        $request = json_decode($request->getContent());
         $token = $this->container->getParameter('feedly.token');
-
         $client = new HttpFeedlyClient();
-        $client->saveForLater($token, $itemIds);
+        $client->saveForLater($token, $request->itemIds);
 
         return new JsonResponse("", 204);
     }
