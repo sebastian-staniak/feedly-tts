@@ -29,6 +29,6 @@ class DefaultController extends Controller
         $items = $sanitizer->sanitize($items);
         $items = $aiClient->rankFeeds($items);
 
-        return new JsonResponse($items);
+        return new JsonResponse(["items" => $items]);
     }
 }
