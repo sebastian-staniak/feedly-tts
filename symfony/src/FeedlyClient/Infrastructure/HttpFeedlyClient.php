@@ -47,4 +47,20 @@ class HttpFeedlyClient implements ClientInterface
             ]
         ])->getBody());
     }
+
+    public function saveForLater($token, array $itemIds)
+    {
+        $uri = $this->baseUrl . "/v3/markers";
+        $body = [];
+        $body["type"] = "entries";
+        $body["entryIds"] = $itemIds;
+        $body["action"] = "markAsSaved";
+        $this->httpClient->post($uri, [
+            "headers" => [
+                "Authorization" => "OAuth {$token}",
+                "Content-Type" => "application/json"
+            ],
+            "json" => $body
+        ]);
+    }
 }

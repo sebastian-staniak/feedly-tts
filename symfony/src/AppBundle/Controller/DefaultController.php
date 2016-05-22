@@ -16,9 +16,9 @@ use Symfony\Component\HttpFoundation\Request;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/feed", name="homepage")
+     * @Route("/feed", name="getFeed")
      */
-    public function indexAction(Request $request)
+    public function feedAction(Request $request)
     {
         $token = $this->container->getParameter('feedly.token');
         $feedlyProfileId = $this->container->getParameter('feedly.profile_id');
@@ -33,4 +33,19 @@ class DefaultController extends Controller
 
         return new JsonResponse(["items" => $items]);
     }
+
+    /**
+     * @Route("/saveForLater", name="")
+     */
+    public function saveForLater(Request $request)
+    {
+        $itemIds = ["6tEjjG1yas2HK/Qxnos1q7W8ioIhhmXKTYoNgwIjOLo=_154d599cc5b:5dbab03:97af7a9a"];
+        $token = $this->container->getParameter('feedly.token');
+
+        $client = new HttpFeedlyClient();
+        $client->saveForLater($token, $itemIds);
+
+        return new JsonResponse("", 204);
+    }
+
 }
