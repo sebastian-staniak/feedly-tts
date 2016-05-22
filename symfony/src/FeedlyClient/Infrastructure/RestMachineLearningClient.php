@@ -27,6 +27,12 @@ class RestMachineLearningClient implements MachineLearnignClient
     {
         $url = $this->baseUrl . "/rank";
 
-        return $this->client->post($url, ["json" => $feeds])->getBody();
+        $result = $this->client->post($url, [
+            "headers" => [
+                "Content-Type" => "application/json"
+            ],
+            "json" => $feeds])->getBody();
+
+        return \GuzzleHttp\json_decode($result->getContents());
     }
 }

@@ -24,8 +24,8 @@ class DefaultController extends Controller
         $token = $this->container->getParameter('feedly.token');
         $feedlyProfileId = $this->container->getParameter('feedly.profile_id');
 
-        $client = new FilesystemFeedlyClient();
-        $aiClient = new MockedMachineLearningClient();
+        $client = new HttpFeedlyClient();
+        $aiClient = new RestMachineLearningClient();
         $sanitizer = new ItemsSanitizer([new CountryDecorator(), new ContentTrimmer()]);
 
         $items = $client->getItems($token, $feedlyProfileId, 200);
