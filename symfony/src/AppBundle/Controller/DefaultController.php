@@ -39,7 +39,7 @@ class DefaultController extends Controller
      */
     public function saveForLater(Request $request)
     {
-        $itemIds = ["6tEjjG1yas2HK/Qxnos1q7W8ioIhhmXKTYoNgwIjOLo=_154d599cc5b:5dbab03:97af7a9a"];
+        $itemIds = \GuzzleHttp\json_decode($request->request->get("itemIds"));
         $token = $this->container->getParameter('feedly.token');
 
         $client = new HttpFeedlyClient();
