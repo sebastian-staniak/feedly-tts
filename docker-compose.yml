@@ -16,8 +16,8 @@ services:
         volumes:
             - ./symfony:/var/www/symfony
             - ./logs/symfony:/var/www/symfony/app/logs
-        links:
-            - db
+#        links:
+#            - db
     nginx:
         build: ./nginx
         ports:
