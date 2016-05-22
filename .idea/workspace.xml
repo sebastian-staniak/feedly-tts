@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ed7c4985-3f48-4a42-a6be-000c7df5bd10" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logs/nginx/symfony_access.log" afterPath="$PROJECT_DIR$/logs/nginx/symfony_access.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logs/nginx/symfony_error.log" afterPath="$PROJECT_DIR$/logs/nginx/symfony_error.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/symfony/src/AppBundle/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/symfony/src/AppBundle/Controller/DefaultController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/symfony/src/FeedlyClient/Infrastructure/HttpFeedlyClient.php" afterPath="$PROJECT_DIR$/symfony/src/FeedlyClient/Infrastructure/HttpFeedlyClient.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/symfony/src/FeedlyClient/Application/ContentTrimmer.php" afterPath="$PROJECT_DIR$/symfony/src/FeedlyClient/Application/ContentTrimmer.php" />
     </list>
     <ignored path="feedly-tts.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -50,11 +46,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DefaultController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="DefaultController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/symfony/src/AppBundle/Controller/DefaultController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.65217394">
-              <caret line="27" column="46" selection-start-line="27" selection-start-column="46" selection-end-line="27" selection-end-column="46" />
+            <state vertical-scroll-proportion="-18.125">
+              <caret line="29" column="79" selection-start-line="29" selection-start-column="79" selection-end-line="29" selection-end-column="79" />
               <folding>
                 <element signature="e#40#84#0#PHP" expanded="true" />
               </folding>
@@ -94,11 +90,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ContentTrimmer.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ContentTrimmer.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/symfony/src/FeedlyClient/Application/ContentTrimmer.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.75">
-              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.19323671">
+              <caret line="8" column="52" selection-start-line="8" selection-start-column="52" selection-end-line="8" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -159,7 +155,6 @@
         <option value="$PROJECT_DIR$/symfony/app/config/parameters.yml" />
         <option value="$PROJECT_DIR$/symfony/src/FeedlyClient/Application/ItemsSanitizer.php" />
         <option value="$PROJECT_DIR$/symfony/src/FeedlyClient/Application/CountryDecorator.php" />
-        <option value="$PROJECT_DIR$/symfony/src/FeedlyClient/Application/ContentTrimmer.php" />
         <option value="$PROJECT_DIR$/docker-compose.yml" />
         <option value="$PROJECT_DIR$/nginx/symfony.conf" />
         <option value="$PROJECT_DIR$/symfony/src/FeedlyClient/Application/DeleteEmpty.php" />
@@ -167,6 +162,7 @@
         <option value="$PROJECT_DIR$/symfony/src/FeedlyClient/Application/DomainExtractor.php" />
         <option value="$PROJECT_DIR$/symfony/src/FeedlyClient/Infrastructure/HttpFeedlyClient.php" />
         <option value="$PROJECT_DIR$/symfony/src/AppBundle/Controller/DefaultController.php" />
+        <option value="$PROJECT_DIR$/symfony/src/FeedlyClient/Application/ContentTrimmer.php" />
       </list>
     </option>
   </component>
@@ -792,14 +788,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/symfony/src/FeedlyClient/Application/ContentTrimmer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.75">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/symfony/src/FeedlyClient/Application/ItemsSanitizer.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-15.625">
@@ -810,11 +798,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/symfony/src/AppBundle/Controller/DefaultController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.65217394">
-          <caret line="27" column="46" selection-start-line="27" selection-start-column="46" selection-end-line="27" selection-end-column="46" />
+        <state vertical-scroll-proportion="-18.125">
+          <caret line="29" column="79" selection-start-line="29" selection-start-column="79" selection-end-line="29" selection-end-column="79" />
           <folding>
             <element signature="e#40#84#0#PHP" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/symfony/src/FeedlyClient/Application/ContentTrimmer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.19323671">
+          <caret line="8" column="52" selection-start-line="8" selection-start-column="52" selection-end-line="8" selection-end-column="52" />
+          <folding />
         </state>
       </provider>
     </entry>
