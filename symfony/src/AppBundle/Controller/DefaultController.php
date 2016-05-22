@@ -4,6 +4,7 @@ namespace AppBundle\Controller;
 
 use FeedlyClient\Application\ContentTrimmer;
 use FeedlyClient\Application\CountryDecorator;
+use FeedlyClient\Application\DomainExtractor;
 use FeedlyClient\Application\ItemsSanitizer;
 use FeedlyClient\Infrastructure\FilesystemFeedlyClient;
 use FeedlyClient\Infrastructure\HttpFeedlyClient;
@@ -24,9 +25,9 @@ class DefaultController extends Controller
         $token = $this->container->getParameter('feedly.token');
         $feedlyProfileId = $this->container->getParameter('feedly.profile_id');
 
-        $client = new HttpFeedlyClient();
+        $client = new FilesystemFeedlyClient();
         $aiClient = new RestMachineLearningClient();
-        $sanitizer = new ItemsSanitizer([new CountryDecorator(), new ContentTrimmer()]);
+        $sanitizer = new ItemsSanitizer([new CountryDecorator(), new ContentTrimmer(), new DomainExtractor()]);
 
         $items = $client->getItems($token, $feedlyProfileId, 200);
         $items = $sanitizer->sanitize($items);
