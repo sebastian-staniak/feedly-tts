@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use FeedlyClient\Application\ContentTrimmer;
 use FeedlyClient\Application\CountryDecorator;
 use FeedlyClient\Application\ItemsSanitizer;
 use FeedlyClient\Infrastructure\FilesystemFeedlyClient;
@@ -24,7 +25,7 @@ class DefaultController extends Controller
 
         $client = new FilesystemFeedlyClient();
         $aiClient = new MockedMachineLearningClient();
-        $sanitizer = new ItemsSanitizer([new CountryDecorator()]);
+        $sanitizer = new ItemsSanitizer([new CountryDecorator(), new ContentTrimmer()]);
 
         $items = $client->getItems($token, $feedlyProfileId, 200);
         $items = $sanitizer->sanitize($items);
