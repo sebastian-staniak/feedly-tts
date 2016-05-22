@@ -8,7 +8,8 @@ class DomainExtractor
     {
         $url = $item->origin->htmlUrl;
         $domain = parse_url($url, PHP_URL_HOST);
+        $item->domain = str_replace("www.", "", $domain);
 
-        return str_replace("www.", "", $domain);
+        return $item;
     }
 }

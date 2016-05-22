@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ed7c4985-3f48-4a42-a6be-000c7df5bd10" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/symfony/src/FeedlyClient/Application/DomainExtractor.php" afterPath="$PROJECT_DIR$/symfony/src/FeedlyClient/Application/DomainExtractor.php" />
     </list>
     <ignored path="feedly-tts.iws" />
@@ -63,7 +62,7 @@
         <entry file="file://$PROJECT_DIR$/symfony/src/FeedlyClient/Application/DomainExtractor.php">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.28985506">
-              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+              <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -810,7 +809,7 @@
     <entry file="file://$PROJECT_DIR$/symfony/src/FeedlyClient/Application/DomainExtractor.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.28985506">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
           <folding />
         </state>
       </provider>
