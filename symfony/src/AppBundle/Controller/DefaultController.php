@@ -8,7 +8,6 @@ use FeedlyClient\Application\DomainExtractor;
 use FeedlyClient\Application\ItemsSanitizer;
 use FeedlyClient\Infrastructure\FilesystemFeedlyClient;
 use FeedlyClient\Infrastructure\HttpFeedlyClient;
-use FeedlyClient\Infrastructure\MockedMachineLearningClient;
 use FeedlyClient\Infrastructure\RestMachineLearningClient;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -25,7 +24,7 @@ class DefaultController extends Controller
         $token = $this->container->getParameter('feedly.token');
         $feedlyProfileId = $this->container->getParameter('feedly.profile_id');
 
-        $client = new FilesystemFeedlyClient();
+        $client = new HttpFeedlyClient();
         $aiClient = new RestMachineLearningClient();
         $sanitizer = new ItemsSanitizer([new CountryDecorator(), new ContentTrimmer(), new DomainExtractor()]);
 
@@ -37,7 +36,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/saveForLater", name="")
+     * @Route("/saveForLater", name="saveForLater")
      */
     public function saveForLater(Request $request)
     {
@@ -50,7 +49,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/markAsRead", name="")
+     * @Route("/markAsRead", name="markAsRead")
      */
     public function markAsRead(Request $request)
     {
